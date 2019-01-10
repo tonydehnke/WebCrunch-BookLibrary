@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <%= stylesheet_link_tag 'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' %>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'https://js.stripe.com/v3/', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body class="<%= yield (:body_class) %>">
@@ -30,7 +30,7 @@
         <%= link_to root_path, class:"navbar-item" do %>
           <h1 class="title is-5 has-text-white"><%= Rails.configuration.application_name %></h1>
         <% end  %>
-        <div class="navbar-burger burger" data-target="navbar">
+        <div class="navbar-burger burger is-white" data-target="navbar">
           <span></span>
           <span></span>
           <span></span>
@@ -41,7 +41,7 @@
         <div class="navbar-start">
           <% if subscribed? %>
             <div class="navbar-item">
-              <%= link_to library_index_path, class: 'navbar-item button is-dark' do %>
+              <%= link_to library_index_path, class: 'navbar-item button is-white' do %>
                 <i class="fa fa-book"></i> &nbsp;&nbsp My Library
               <% end %>
             </div>
